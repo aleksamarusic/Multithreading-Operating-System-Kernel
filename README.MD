@@ -37,8 +37,10 @@ Semaphores:
 ```
 Events:
 ```C
-	PREPAREENTRY(ivtNo, callOldISR) // adds new interrupt service routine that signals event and optionally calls old ISR. Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
-
+	// adds new interrupt service routine that signals event and optionally calls old ISR. 
+	// Routine is added inside system interrupt vector table, on specified entry number, ivtNo)
+	PREPAREENTRY(ivtNo, callOldISR) 
+	
 	Event(IVTNo ivtNo); // after calling prepareentry, create event instance
 	int wait(); // blocks running thread, thread will be unblocked when any interrupt is raised on ivtNo
 ```
